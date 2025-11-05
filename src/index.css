@@ -1,0 +1,19 @@
+@import "tailwindcss";
+body {
+  margin: 0;
+  background-color: #0084a8;
+  align-content: center;
+
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+
+
+.inpts {
+  display: block;
+  padding: 25px;
+  border: rgb(233, 233, 233) 1px solid;
+  width: 100%;
+}
