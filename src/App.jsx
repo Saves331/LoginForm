@@ -1,12 +1,18 @@
 import './App.css'
 import LoginContainer from './components/LoginContainer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from './pages/Login'
+import Register from './pages/Register'
 function App() {
   
 
   return (
-    <div className='h-screen w-screen flex items-center justify-center'>
-      <LoginContainer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
