@@ -10,6 +10,11 @@ function Form() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [users, setUsers] = useState([{email: "", password: ""}])
+  const [isChecked, setIsChecked] = useState(false);
+
+  function handleCheckboxChange() {
+    setIsChecked(prev => !prev);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +24,7 @@ function Form() {
             return updated});   
     setEmail('');
     setPassword('');
-    console.log(users)
+   
   }
 
  
@@ -32,16 +37,16 @@ function Form() {
         {/* email */}
         <div className='flex flex-col w-full'>
           <label className='mb-1'>Email:</label>
-          <input className='inpts' type="email" placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)}/>
+          <input className='inpts' type="email" placeholder='Enter email' value={email} onChange={(e) => setEmail(e.target.value)} required/>
         </div>
 
         {/* password */}
         <div className='flex flex-col w-full'>
           <label className='mb-1'>Password:</label>
-          <input className='inpts' type="password" placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}/>
+          <input className='inpts' type={isChecked ? "text" : "password"} placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)} required/>
 
         <div className='py-2'>
-          <CheckBox />
+          <CheckBox handleCheckboxChange = {handleCheckboxChange}/>
         </div>
           
         </div>

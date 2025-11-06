@@ -12,10 +12,15 @@ function pageLinks() {
     
     <div className='p-5'>
         <h2>
-            Dont have an account? {isLogin ? (
-                <Link to="/" className='text-blue-600'>Sign up</Link>) : 
+             {isLogin ? (<div>
+                <span>Don't have an account? </span>
+                <Link to="/" className='text-blue-600'>Sign up</Link>
+             </div>) : (<div>
+                <span>Already have an account? </span>
+                <Link to="/Login" className='text-blue-600'>Sign in</Link>
+             </div>)
                 
-                (<Link to="/Login" className='text-blue-600'>Sign in</Link>)}
+                }
         </h2>
     </div>
   )
