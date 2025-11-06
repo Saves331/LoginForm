@@ -51,10 +51,7 @@ function Form() {
       </form>
 
       <div>
-        <div>
-          <h3>Forgot</h3>
-          <a href=""></a>
-        </div>
+       
         
       </div>
       
